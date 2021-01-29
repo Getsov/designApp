@@ -1,0 +1,25 @@
+.login-box {
+  margin: 1em;
+  padding: 1em;
+  margin-top: 10vh;
+  background: rgba(var(--ion-color-light-rgb), 0.85);
+
+  border-radius: 15px;
+  border: 2px solid var(--ion-color-primary);
+}
+ion-content {
+  --background: none;
+  background-image: url("/assets/imgs/login.jpg");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+ion-item {
+  --ion-item-background: transparent;
+}
+.fb-btn {
+  --background: #1da1f2;
+}
+.twitter-btn {
+  --background: #3c5a99;
+}
