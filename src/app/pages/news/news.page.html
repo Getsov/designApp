@@ -1,9 +1,38 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>news</ion-title>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start" *ngIf="isMenuPage">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>News</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-segment
+    (ionChange)="segmentChanged($event)"
+    [(ngModel)]="selected"
+    class="ion-padding-top ion-paddin-bottom"
+  >
+    <ion-segment-button value="sports">
+      <ion-label>Sports</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="technology">
+      <ion-label>Technology</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="health">
+      <ion-label>Health</ion-label>
+    </ion-segment-button>
+  </ion-segment>
 
+  <ion-list class="margin-top">
+    <ion-item button *ngFor="let n of news" (click)="open(n)">
+      <ion-thumbnail slot="start">
+        <img [src]="n.urlToImage" />
+      </ion-thumbnail>
+      <ion-label class="text-wrap">
+        <h3>{{ n.title }}</h3>
+        <p>{{ n.publishedAt | date: 'short' }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>

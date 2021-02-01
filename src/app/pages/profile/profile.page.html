@@ -1,9 +1,104 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>profile</ion-title>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Profile</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content parallah-header [scrollEvents]="true">
+  <div class="header-image"></div>
+  <div class="main-content">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="3" class="profile-img-col">
+          <div class="profile-frame">
+            <img
+              src="../../../assets/imgs/profile-img.png"
+              class="profile-img"
+            />
+          </div>
+        </ion-col>
+        <ion-col size="1">
+          <ion-button class="profile-btn" fill="outline" size="small">
+            <ion-icon slot="icon-only" name="cog-outline"></ion-icon>
+          </ion-button>
+        </ion-col>
+        <ion-col size="2" offset="1">
+          <ion-button class="profile-btn" fill="outline" size="small">
+            <ion-icon slot="icon-only" name="people-outline"></ion-icon>
+          </ion-button>
+        </ion-col>
+        <ion-col size="2">
+          <ion-button class="profile-btn" fill="outline" size="small">
+            Edit Profile
+          </ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-padding-start name-row"> Valeri Getsov </ion-row>
+      <ion-row class="ion-padding-start twitter-name"> @ValeriGetsov </ion-row>
+      <ion-row class="ion-padding">
+        Freelancer helping companies to build hybrid mobile apps with
+        @IonicFramework
+      </ion-row>
+      <ion-row class="ion-padding-start ion-text-uppercase">
+        <ion-col> <b>73</b> <span class="muted">Following</span> </ion-col>
+        <ion-col> <b>9</b> <span class="muted">Followers</span> </ion-col>
+      </ion-row>
+    </ion-grid>
 
+    <hr />
+
+    <ion-list>
+      <div *ngFor="let tweet of dummyTweets">
+        <ion-row>
+          <ion-col size="2">
+            <ion-avatar>
+              <img src="../../../assets/imgs/{{tweet.img}}" />
+            </ion-avatar>
+          </ion-col>
+          <ion-col size="10">
+            <ion-row class="ion-align-items-center">
+              <ion-col size="9">
+                {{ tweet.username }}
+                <span class="twitterName">@{{ tweet.handle }}</span>
+              </ion-col>
+              <ion-col class="muted">
+                <ion-icon name="chatbubbles-outline"></ion-icon> {{ tweet.date |
+                date: 'M/d' }}
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col>{{ tweet.text }}</ion-col>
+            </ion-row>
+
+            <ion-row class="share-row">
+              <ion-col size="4">
+                <ion-button fill="clear" size="small">
+                  <ion-icon slot="icon-only" name="share-outline"></ion-icon
+                  ><span class="muted"></span>
+                </ion-button>
+              </ion-col>
+
+              <ion-col size="4">
+                <ion-button fill="clear" size="small">
+                  <ion-icon slot="icon-only" name="repeat-outline"></ion-icon
+                  ><span class="muted">{{ tweet.shareCount }}</span>
+                </ion-button>
+              </ion-col>
+
+              <ion-col size="4">
+                <ion-button fill="clear" size="small">
+                  <ion-icon slot="icon-only" name="star-outline"></ion-icon
+                  ><span class="muted">{{ tweet.likeCount }}</span>
+                </ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </div>
+    </ion-list>
+  </div>
 </ion-content>

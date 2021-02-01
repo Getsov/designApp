@@ -8,7 +8,7 @@ import { map } from "rxjs/operators";
 })
 export class DataService {
   url = "https://newsapi.org/v2";
-  apiKey = "";
+  apiKey = "ad5c33fc0cc24bb4a7f93685164574c4";
   totalPosts = null;
   pages: any;
 
@@ -17,7 +17,7 @@ export class DataService {
   getTopNews(cat) {
     return this.http
       .get(
-        `${this.url}/top-headlines?category=${cat}&country=bg&apiKey=${this.apiKey}`
+        `${this.url}/top-headlines?category=${cat}&country=us&apiKey=${this.apiKey}`
       )
       .pipe(map((res) => res["articles"]));
   }
@@ -25,7 +25,7 @@ export class DataService {
   getSportSources() {
     return this.http
       .get(
-        `${this.url}/sources?category=sports&country=bg&apiKey=${this.apiKey}`
+        `${this.url}/sources?category=sports&language=en&apiKey=${this.apiKey}`
       )
       .pipe(map((res) => res["sources"]));
   }

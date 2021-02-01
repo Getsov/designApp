@@ -23,10 +23,22 @@ const routes: Routes = [
         loadChildren: () =>
           import("../news/news.module").then((m) => m.NewsPageModule),
       },
+      // {
+      //   path: "profile",
+      //   loadChildren: () =>
+      //     import("../profile/profile.module").then((m) => m.ProfilePageModule),
+      // },
       {
-        path: "profile",
+        path: "news/details",
         loadChildren: () =>
-          import("../profile/profile.module").then((m) => m.ProfilePageModule),
+          import("../news-item/news-item.module").then(
+            (m) => m.NewsItemPageModule
+          ),
+      },
+      {
+        path: "menu",
+        loadChildren: () =>
+          import("../menu/menu.module").then((m) => m.MenuPageModule),
       },
     ],
   },

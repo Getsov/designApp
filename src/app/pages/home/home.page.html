@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>home</ion-title>
+    <ion-title>Sources</ion-title>
     <ion-buttons slot="end">
       <ion-button routerLink="/login" routerDirection="root">
         <ion-icon slot="icon-only" name="log-out-outline"></ion-icon>
@@ -9,4 +9,23 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content> </ion-content>
+<ion-content>
+  <ion-slides [options]="slidesOpts">
+    <ion-slide *ngFor="let user of users">
+      <ion-avatar>
+        <img [src]="user.picture.large" />
+      </ion-avatar>
+      <p text-capitalize text-center>{{user.name.first}}</p>
+    </ion-slide>
+  </ion-slides>
+  <div
+    *ngFor="let s of sources"
+    class="source-block"
+    tappable
+    (click)="openSource(s)"
+    [style]="getBlockColor(s)"
+    [ngClass]="{'bg-1': s.country == 'us', 'bg-2': s.country == 'gb', 'bg-3': s.country == 'it'}"
+  >
+    <p class="name">{{ s.name }}</p>
+  </div>
+</ion-content>

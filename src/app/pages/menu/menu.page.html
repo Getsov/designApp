@@ -1,0 +1,22 @@
+<ion-menu contentId="content">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-menu-toggle>
+        <ion-item routerLink="/app/menu/profile" routerDirection="root">
+          <ion-label> Profile Page </ion-label>
+        </ion-item>
+
+        <ion-item routerLink="/app/menu/news" routerDirection="root">
+          <ion-label> News Page </ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-router-outlet id="content" main></ion-router-outlet>

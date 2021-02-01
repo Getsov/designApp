@@ -1,0 +1,43 @@
+.header-img {
+  height: 150px;
+}
+.profile-img-col {
+  margin-top: -40px;
+}
+.profile-frame {
+  background: var(--ion-color-light);
+  padding: 4px;
+  border-radius: 5px;
+}
+.profile-img {
+  border-radius: 5px;
+}
+.profile-btn {
+  border-radius: 5px;
+}
+.name-row {
+  font-size: 1.9rem;
+}
+.twitter-name {
+  color: #8a9fa8;
+}
+.muted {
+  color: #8a9fa8;
+  font-size: 1rem;
+}
+.share-row {
+  height: 30px;
+}
+hr {
+  background: var(--ion-color-medium);
+}
+.header-image {
+  background: url("../../../assets/imgs/profile.jpeg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 30vh;
+}
+.main-content {
+  background-color: var(--ion-color-light);
+}
